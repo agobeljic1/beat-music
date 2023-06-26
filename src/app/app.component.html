@@ -1,0 +1,12 @@
+<div class="gradient"></div>
+<div class="progress" #progress></div>
+<div class="rows">
+  <div class="row" *ngFor="let key of dots | keyvalue">
+    <div
+      class="dot"
+      *ngFor="let dot of key.value; let i = index"
+      [ngClass]="{ 'dot--active': dot.active, 'dot--4': (i + 1) % 4 === 0 }"
+      (click)="dot.active = !dot.active"
+    ></div>
+  </div>
+</div>
